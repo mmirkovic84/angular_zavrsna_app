@@ -1,0 +1,22 @@
+.single-prod-img {
+    width: 100%;
+}
+.product-info .prod-name {
+    font-size: 48px;
+}
+.product-info .prod-price {
+    font-size: 28px;
+    color: blueviolet;
+}
+.breadcrumbs a{
+text-decoration: none;
+color: black;
+}
+.prevnext a{
+    text-decoration: none;
+    color: black;
+}
+.product-tag-name a{
+    text-decoration: none;
+    color: black;
+}

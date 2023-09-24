@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    font-size: 16px;
+}
+
+
+.navbar-brand {
+    margin-right: 0 !important;
+}
+
+.form-control {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgb(145, 145, 145) !important;
+    border-radius: 0px !important;
+    overflow-y: hidden;
+}
+.form-control:focus {
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom:3px solid rgb(227, 108, 225) !important;
+    box-shadow: 0px !important;
+    /* border-color: transparent !important; */
+    outline: none !important;
+    box-shadow: none !important; 
+  }
+  .form-control2 {
+    border: 1px solid rgb(145, 145, 145) !important;
+    border-radius: 0px !important;
+    overflow-y: hidden;
+}
+.form-control2:focus {
+    border:3px solid rgb(227, 108, 225) !important;
+    box-shadow: 0px !important;
+    /* border-color: transparent !important; */
+    outline: none !important;
+    box-shadow: none !important; 
+  }
+#social {
+    position: fixed;
+    right: -10px;
+    top: 50%;
+    width: 49px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    height: 276px;
+    z-index: 999;
+    /* border: 1px solid rgb(203, 203, 203); */
+}
+.soc-icons {
+    margin: 50px 10px;
+    position: relative;
+}
+.footer-leftSide {
+
+    padding:200px 40px;
+    background-color: rgb(223, 163, 210);
+    }
+    .footer-rightSide {
+        background-image: url('src/assets/img/FTD_SplitBanner_Merx_1.png');
+        background-position: center;
+        background-size: cover;
+        padding:200px 40px;
+    }
+    .prod-imgs img:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+    .prod-imgs{
+        color: black;
+        text-decoration: none;
+    }
+    .prod-imgs p{
+        color: black;
+        text-decoration: none;
+    }
+    .prod-imgs p:hover{
+        opacity: 0.9;
+        cursor: pointer;
+    }
+    .navbar {
+        border-bottom: 1px solid rgb(243, 243, 243) !important;
+    }

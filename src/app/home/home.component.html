@@ -1,0 +1,184 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12" id="heroimg">
+
+            <div class="col-md-6 float-end col-sm-12 text-end mt-5 align-middle pe-5">
+                <h1>March Into the Spring</h1>
+                <p>Bring the meadow to them with a daisy bouquet.</p>
+                <button class="btn btn-secondary" routerLink="/shop">Shop Flowers</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-sm-12 mt-5 mb-5">
+            <p>
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer velit lacus, molestie ac venenatis nec,
+                tristique eget eros. Phasellus ut lectus a velit faucibus commodo sit amet sed leo. Vestibulum vitae
+                maximus nunc, vel luctus sem. Curabitur ornare finibus ligula. Nam eget justo pellentesque, vulputate
+                nisi congue, lobortis diam. Nullam sit amet diam sem. Curabitur efficitur lacus id magna fermentum, et
+                suscipit lectus porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                inceptos himenaeos. Ut tempus nibh nec massa gravida dictum. Pellentesque habitant morbi tristique
+                senectus et netus et malesuada fames ac turpis egestas. Morbi elementum mollis dolor eleifend tempus.
+                Cras ex nunc, lacinia nec feugiat vitae, tempus ut leo. Donec vitae aliquet velit, ac ultricies orci.
+            </p>
+            <p> Morbi eu nisl nunc. Pellentesque ac iaculis ex, vel consequat dui. Nullam ut diam vitae justo
+                pellentesque ultricies. Ut tincidunt mauris turpis, eget auctor nisl auctor in. Proin eget tincidunt
+                tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean maximus arcu sit amet accumsan
+                aliquet. Donec ultrices porttitor nulla eu congue. Mauris sed purus nisl. Donec dolor enim, sollicitudin
+                quis porta sit amet, aliquet in massa. Maecenas eget est lectus. Pellentesque habitant morbi tristique
+                senectus et netus et malesuada fames ac turpis egestas. Nam in porttitor ligula. Cras eleifend feugiat
+                viverra.</p>
+            <p>Nunc id turpis neque. Vivamus quam lectus, cursus id scelerisque eu, volutpat convallis nulla.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin nisi
+                massa, pretium sed justo condimentum, molestie tincidunt augue. Vestibulum at varius nisl, a pulvinar
+                quam. Sed sit amet quam vel neque tempor tincidunt porttitor in ligula. Nam id felis molestie, aliquet
+                odio in, gravida nibh. Duis efficitur massa erat, ac sollicitudin dui porta ac. Vestibulum malesuada
+                condimentum nulla, et molestie orci vulputate in.</p>
+            <p>In tincidunt orci vel ultrices consequat. Duis hendrerit interdum molestie. Nulla quis sapien a justo
+                ultrices tempus placerat et ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec
+                vel dui varius, accumsan quam ac, hendrerit felis. Maecenas urna lectus, facilisis at erat eu, blandit
+                dapibus turpis. Sed condimentum finibus consectetur. Donec et posuere nulla. Aliquam semper dignissim
+                suscipit. Morbi ac nisi at diam condimentum gravida vel et leo. Vivamus erat odio, rutrum vitae risus
+                et, malesuada imperdiet velit. Nulla tempus, est sit amet maximus ultrices, ex diam consequat libero, at
+                eleifend urna lorem a tortor. Maecenas nec nibh elementum, mollis sem ut, tristique sapien. Donec neque
+                mauris, porttitor eu nisi et, pellentesque tincidunt magna.</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    
+    <div class="row mb-2">
+        <!-- <div class="col-lg-3 col-md-6 col-sm-12 pe-1 text-center" *ngFor="let img of imgs">
+            <div [innerHtml]="img">
+                
+            </div>  
+           
+        </div>  -->
+        <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-5" *ngFor="let product of products">
+            <a routerLink="/product/{{product.id}}" class="prod-imgs">
+                 <img src="{{product.imageUrl}}" alt="" class="img-fluid mb-2">
+                 <p class='text-center fs-4 mt-1'>{{product.name}}</p><p class='text-center fs-4'>${{product.price}}</p>
+             </a>
+         </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-12 text-center pt-4 pb-5">
+            <button class="btn btn-outline-secondary" routerLink="/shop">Load More</button>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <p>Send us a message:</p>
+            <p>Laze Nancica 7, Novi Sad</p>
+            <p>021/422-022</p>
+            <p>office@smartinit.net</p>
+            <br>
+            <p>MON - FRI: 7-10</p>
+            <p>SATURDAY: 8-10</p>
+            <p>SUNDAY: -</p>
+            <br>
+            <p>FAQ/</p>
+            <p>Shipping & Returns/</p>
+            <p>Store Policy/</p>
+            <p>Payment Method/</p>
+        </div>
+        <div class="col-lg-8 mt-5">
+            <form id="contact-form" name="contact-form">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Your Name" id="floatingTextarea1"></textarea>
+                            <label for="floatingTextarea1">Your Name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Your email" id="floatingTextarea2"></textarea>
+                            <label for="floatingTextarea2">Your email</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12 mt-3">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Subject" id="floatingTextarea3"></textarea>
+                            <label for="floatingTextarea3">Subject</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12 mt-3">
+
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Your Message" id="floatingTextarea4"
+                                style="height: 100px"></textarea>
+                            <label for="floatingTextarea4">Your Message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+                <div class="text-center text-md-left mt-4 mb-5">
+                    <a class="btn btn-outline-secondary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                </div>
+
+            </form>
+<div class="row">
+    <div class="col-12">
+        <p>Get our Newslatters</p>
+    </div>
+</div>
+            <div class="row">
+                <div class="col-md-6 col-sm-3">
+                    <div class="form-floating">
+                        <textarea class="form-control form-control2" placeholder="Enter your e-mail here"
+                            id="floatingTextarea6"></textarea>
+                        <label for="floatingTextarea6">Enter your e-mail here</label>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 text-center" style="padding-top: 9px;">
+                    <a class="btn btn-dark"
+                        onclick="document.getElementById('contact-form').submit();">Subscribe Now</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-6 footer-leftSide text-center text-light">
+            <h1>Send Get well wishes</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex officiis itaque.</p>
+            <button class="btn btn-dark" routerLink="/shop">Shop get well flowers and gifts</button>
+        </div>
+        <div class="col-md-6 footer-rightSide"></div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<app-not-found [visible]="!cart || cart.items.length <=0" notFoundMessage="Shopping Cart is Empty!" resetLinkText="Back to Shop">
+</app-not-found>
+<div *ngIf="cart && cart.items.length > 0" class="container pt-5">
+    <div class="row">
+        <ul class="cart-list-ul">
+            <li *ngFor="let cartItem of cart.items">
+                <div class="col-md-12 cart-list">
+                    <div class="row">
+                        <div class="col-md-2 cart-prod-img pb-2 text-start">
+                            <a routerLink="/product/{{cartItem.product.id}}">
+                            <img [src]="cartItem.product.imageUrl" [alt]="cartItem.product.name" class="img-fluid"></a>
+                        </div>
+
+                        <div class="col-md-4 text-start">
+                            <a routerLink="/product/{{cartItem.product.id}}">
+                                {{cartItem.product.name}}
+                            </a><br><br>
+                            <button class="btn btn-danger remove-button" (click)="removeFromCart(cartItem)">Remove</button>
+                        </div>
+                        <div class="col-md-2  text-start">
+                            {{cartItem.product.price | currency}}
+                        </div>
+
+                        <div class="form-outline col-md-2  text-start">
+                            <label class="form-label" for="typeNumber">Quantity:&nbsp;</label>
+                            <input type="number" placeholder="1" id="typeNumber" class="form-control-cart" #quantitySelect
+                                (change)="changeQuantity(cartItem,quantitySelect.value)" />
+
+                        </div>
+                        
+
+                        <div class="col-md-2  text-end">
+                            {{cartItem.price | currency}}
+                        </div>
+                    </div><hr>
+                </div>
+            </li>
+        </ul>
+       
+    </div>
+
+<div class="row">
+    <div class="col-md-6 offset-md-6">
+        <div class="checkout text-end">
+            <div>
+                <!-- <div class="product-count">Products in Cart: {{cart.items.length}}</div> -->
+                <div class="product-count">SUBTOTAL: {{cart.subtotalPrice | currency}}</div>
+                <div class="product-count">SHIPPING: {{cart.shippingPrice | currency}}</div><hr>
+                <div class="total-price">TOTAL: {{cart.totalPrice | currency}}</div><br>
+                <button class="btn btn-dark" (click)="checkOut()">Checkout</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="emptyCartDiv col-12 text-center">
+        <h1>Shopping Cart is Empty!!!</h1>
+    </div>
+</div> -->
+
+
+</div>

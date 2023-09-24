@@ -1,0 +1,33 @@
+#heroimg {
+    background-image: url('src/assets/img/flowerBackground1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding: 12vh 0 12vh 0;
+}
+
+.icon-1 {
+    font-size: 25px;
+}
+
+.icon-2 {
+    font-size: 30px;
+}
+
+.icon-3 {
+    font-size: 40px;
+}
+
+.bg_bela {
+    background-color: white !important;
+}
+
+.classWithPad {
+    margin: 10px;
+    padding: 10px;
+}
+
+.img_flowers {
+    width: 100%;
+}
