@@ -4,14 +4,14 @@ import { CartService } from '../services/cart/cart.service';
 import { CartItem } from '../shared/models/cartItem';
 import { ProductService } from '../services/products/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { HeaderComponent } from '../header/header.component';
 
 
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
-  styleUrls: ['./cart-page.component.css']
-
+  styleUrls: ['./cart-page.component.css'],
+providers:[HeaderComponent]
   
 })
 export class CartPageComponent {
@@ -19,9 +19,11 @@ export class CartPageComponent {
   constructor(private cartService: CartService,
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
-    private router:Router) { 
+    private router:Router,
+    private headerComponent:HeaderComponent) { 
     this.setCart();
   }
+
 
 removeFromCart(cartItem:CartItem){
   this.cartService.removeFromCart(cartItem.product.id);

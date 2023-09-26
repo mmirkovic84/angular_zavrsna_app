@@ -1,4 +1,4 @@
-<div *ngIf="visible">
+<div *ngIf="visible" (mouseover)="changeNotifToGray();">
 {{notFoundMessage}}
-<a routerLink="{{resetLinkRoute}}">{{resetLinkText}}</a>
+<a routerLink="{{resetLinkRoute}}" >{{resetLinkText}}</a>
 </div>
