@@ -11,39 +11,39 @@ import { HeaderComponent } from '../header/header.component';
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css'],
-providers:[HeaderComponent]
-  
+  providers: [HeaderComponent]
+
 })
 export class CartPageComponent {
   cart!: Cart;
   constructor(private cartService: CartService,
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
-    private router:Router,
-    private headerComponent:HeaderComponent) { 
+    private router: Router,
+    private headerComponent: HeaderComponent) {
     this.setCart();
   }
 
 
-removeFromCart(cartItem:CartItem){
-  this.cartService.removeFromCart(cartItem.product.id);
-  this.setCart();
-}
+  removeFromCart(cartItem: CartItem) {
+    this.cartService.removeFromCart(cartItem.product.id);
+    this.setCart();
+  }
 
-changeQuantity(cartItem:CartItem, quantityInString:string){
-  const quantity = parseInt(quantityInString);
-  this.cartService.changeQuantity(cartItem.product.id, quantity);
- 
+  changeQuantity(cartItem: CartItem, quantityInString: string) {
+    const quantity = parseInt(quantityInString);
+    this.cartService.changeQuantity(cartItem.product.id, quantity);
 
-  this.setCart();
-}
+
+    this.setCart();
+  }
 
   setCart() {
     this.cart = this.cartService.getCart();
   }
 
-  checkOut(){
-     this.router.navigateByUrl('/checkout-page');
+  checkOut() {
+    this.router.navigateByUrl('/checkout-page');
   }
-  
+
 }

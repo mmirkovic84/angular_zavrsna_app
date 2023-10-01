@@ -15,6 +15,7 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { TagsComponent } from './tags/tags.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
     SearchComponent,
     TagsComponent,
     CheckoutPageComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

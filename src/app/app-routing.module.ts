@@ -5,7 +5,7 @@ import { ShopComponent } from './shop/shop.component';
 import { SingleProductComponent } from './single-product/single-product.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
-
+import { AboutComponent } from './about/about.component';
 
 
 const routes: Routes = [
@@ -16,6 +16,7 @@ const routes: Routes = [
   {path:'search/:searchTerm', component: ShopComponent},
   {path: 'tag/:tag', component: ShopComponent},
   {path: 'checkout-page', component: CheckoutPageComponent},
+  {path:'about',component:AboutComponent}
 ];
 
 @NgModule({

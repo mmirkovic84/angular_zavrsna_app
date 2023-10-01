@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../services/cart/cart.service';
 import { Cart } from '../shared/models/Cart';
-import { CartItem } from '../shared/models/cartItem';
 import { ProductService } from '../services/products/product.service';
 import { product } from '../shared/models/product';
 
