@@ -32,9 +32,43 @@
         </p>
      
        <hr>
-       <button (click)="addToCart()" (click)="callMe()" class="btn btn-dark">Add to Cart</button>
+       <!-- <label class="form-label" for="typeNumber">Quantity:&nbsp;</label>
+                            <input type="number" placeholder="1" id="typeNumber" class="form-control-cart" #quantitySelect
+                                (change)="changeQuantity(cartItem,quantitySelect.value)" min="1" />  -->
+<!-- If user is logged in let him add to cart. -->
+       <ng-template [ngIf]="authService.isLoggedIn">
+        <button (click)="addToCart()" (click)="callMe()" class="btn btn-dark">Add to Cart</button>
+      </ng-template>
 
+      <!-- If user is not logged in activate him a modal with login. -->
+      <ng-template [ngIf]="!authService.isLoggedIn">
+        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#adtocart-modal">Add to Cart</button>
+      </ng-template> 
        
+
+
+
+
+      <div class="modal" tabindex="-1" id="adtocart-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            
+            <div class="modal-body text-center">
+                <h2>We want to meet you!</h2>
+              <p>Please Log In to continue enjoying shopping on our website.</p>
+              <button type="button" class="btn btn-dark" routerLink="/sign-in" data-bs-dismiss="modal">LOG IN</button>
+            </div>
+            <div class="modal-footer text-center">
+              <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
     </div>
 </div>
 </div>

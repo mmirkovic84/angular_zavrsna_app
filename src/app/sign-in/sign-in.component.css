@@ -1,0 +1,28 @@
+#loginbg {
+    background-image: url('src/assets/img/loginBackground.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    padding: 12vh 0 12vh 0;
+    position: relative;
+    overflow: hidden;
+}
+#table-login {
+margin: 25% 10%;
+}
+textarea
+{
+  border:1px solid #999999;
+  width:100%;
+  margin:5px 0;
+  padding:3px;
+}
+a {
+    color: black;
+    text-decoration: underline;
+}
+#login-button1 {
+    width: 100% !important;
+}

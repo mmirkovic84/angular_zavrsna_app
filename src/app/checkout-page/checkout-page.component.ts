@@ -14,7 +14,8 @@ import { product } from '../shared/models/product';
 export class CheckoutPageComponent {
   cart!: Cart;
   products:product[] = [];
-  constructor(private cartService: CartService,
+  cartItems$: any;
+  constructor(public cartService: CartService,
     private productService:ProductService,
     private route:ActivatedRoute,
     private router:Router) { 
@@ -30,5 +31,8 @@ export class CheckoutPageComponent {
   setCart() {
     this.cart = this.cartService.getCart();
   }
-
+  clearCart() {
+    this.cart.items = [];
+    return this.cart.items;
+  }
 }

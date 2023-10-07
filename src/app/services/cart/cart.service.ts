@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { Cart } from 'src/app/shared/models/Cart';
 import { CartItem } from 'src/app/shared/models/cartItem';
 import { product } from 'src/app/shared/models/product';
+// import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  items: CartItem[] = [];
   private cart: Cart = new Cart();
+  // cartItems$ = new BehaviorSubject<CartItem[]>([]); 
 
   addToCart(product: product): void {
     let cartItem = this.cart.items.find(item => item.product.id === product.id);
@@ -33,4 +36,14 @@ export class CartService {
   getCart(): Cart{
     return this.cart;
   }
+
+  // clearCart() {
+  //   this.cartItems$.next([]);
+  //   return this.cart;
+  // }
+  clearCart() {
+    this.cart.items = [];
+    return this.cart.items;
+  }
+  
 }

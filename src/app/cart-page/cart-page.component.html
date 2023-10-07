@@ -24,7 +24,7 @@
                         <div class="form-outline col-md-2  text-start">
                             <label class="form-label" for="typeNumber">Quantity:&nbsp;</label>
                             <input type="number" placeholder="1" id="typeNumber" class="form-control-cart" #quantitySelect
-                                (change)="changeQuantity(cartItem,quantitySelect.value)" />
+                                (change)="changeQuantity(cartItem,quantitySelect.value)" min="1" />
 
                         </div>
                         
@@ -43,6 +43,9 @@
     <div class="col-md-6 offset-md-6">
         <div class="checkout text-end">
             <div>
+                <div class="text-end text-md-left mt-4 mb-5">
+                    <a class="btn btn-outline-secondary" (click)="clearCart()">Clear Cart</a>
+                </div>
                 <!-- <div class="product-count">Products in Cart: {{cart.items.length}}</div> -->
                 <div class="product-count">SUBTOTAL: {{cart.subtotalPrice | currency}}</div>
                 <div class="product-count">SHIPPING: {{cart.shippingPrice | currency}}</div><hr>

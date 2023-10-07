@@ -6,6 +6,7 @@ import { CartService } from '../services/cart/cart.service';
 import { CartItem } from '../shared/models/cartItem';
 import { Cart } from '../shared/models/Cart';
 import { HeaderComponent } from '../header/header.component';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-single-product',
@@ -18,10 +19,12 @@ export class SingleProductComponent {
   cart!: Cart;
   product!: product;
   constructor(private activatedRoute: ActivatedRoute,
-    private productService: ProductService,
-    private cartService: CartService,
-    private router:Router,
-    private headerComponent: HeaderComponent) {
+    public productService: ProductService,
+    public cartService: CartService,
+    public router:Router,
+    public headerComponent: HeaderComponent,
+    public authService:AuthService
+    ) {
       this.setCart();
     activatedRoute.params.subscribe((params) => {
       if (params.id)
@@ -39,12 +42,12 @@ export class SingleProductComponent {
     this.headerComponent.testCall();
   }
 
-  changeQuantity(cartItem:CartItem, quantityInString:string){
+  // changeQuantity(cartItem:CartItem, quantityInString:string){
     
-    const quantity = parseInt(quantityInString);
-    this.cartService.changeQuantity(cartItem.product.id, quantity);
-    this.setCart();
-  }
+  //   const quantity = parseInt(quantityInString);
+  //   this.cartService.changeQuantity(cartItem.product.id, quantity);
+  //   this.setCart();
+  // }
 
   setCart() {
     this.cart = this.cartService.getCart();

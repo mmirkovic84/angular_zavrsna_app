@@ -36,3 +36,11 @@ color: black;
 .sivaNotif{
    background-color: gray !important;
 } */
+.login-link {
+   cursor: pointer;
+   text-decoration: none;
+   transition: .5s;
+}
+.login-link:hover {
+   color: rgb(249, 52, 196) !important;
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Cart } from '../shared/models/Cart';
 import { CartService } from '../services/cart/cart.service';
+import { AuthService } from '../services/auth/auth.service';
 
 
 @Component({
@@ -11,7 +12,8 @@ import { CartService } from '../services/cart/cart.service';
 export class HeaderComponent {
   cart!: Cart;
   activeClass: boolean;  
-  constructor(private cartService: CartService, 
+  constructor(private cartService: CartService,
+    public authService: AuthService, 
              ) {
     this.setCart();
 

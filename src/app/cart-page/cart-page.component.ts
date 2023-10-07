@@ -45,5 +45,8 @@ export class CartPageComponent {
   checkOut() {
     this.router.navigateByUrl('/checkout-page');
   }
-
+  clearCart() {
+    this.cart.items = [];
+    return this.cart.items;
+  }
 }

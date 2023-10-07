@@ -1,0 +1,34 @@
+<div class="container" id="loginbg">
+  <div class="row">
+    <div class="col-md-6 offset-3">
+      <div class="displayTable" id="table-login">
+        <div class="displayTableCell">
+          <div class="authBlock">
+            <h3>Create Account</h3>
+
+            <div class="form-floating mb-3 mt-5">
+              <input type="email" class="form-control" id="floatingInput1" placeholder="name@example.com" #userEmail
+                required>
+              <label for="floatingInput1">Email address</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingInput2" placeholder="password" #userPwd required>
+              <label for="floatingInput2">Password</label>
+            </div>
+
+            <div class="formGroup">
+              <input type="button" class="btn btn-dark mt-5 w-100" value="Sign Up"
+                (click)="authService.SignUp(userEmail.value, userPwd.value)" />
+            </div>
+
+            <div class="redirectToLogin mt-5">
+              <span>Already have an account?
+                <a class="redirect" routerLink="/sign-in">Log In</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
