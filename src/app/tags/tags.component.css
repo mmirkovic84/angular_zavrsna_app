@@ -5,3 +5,6 @@
 text-decoration: none;
 color: black;
 }
+.tagovi img a:active{
+    border-bottom: 1px solid pink;
+    }

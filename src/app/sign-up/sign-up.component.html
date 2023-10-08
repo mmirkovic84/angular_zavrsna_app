@@ -6,26 +6,38 @@
           <div class="authBlock">
             <h3>Create Account</h3>
 
+            <form id="signup-form" name="signup-form" #signupForm="ngForm" class="mt-4" (ngSubmit)="onSubmit(); signupForm.resetForm()">
+
             <div class="form-floating mb-3 mt-5">
-              <input type="email" class="form-control" id="floatingInput1" placeholder="name@example.com" #userEmail
-                required>
+              <input type="email" class="form-control" id="floatingInput1" placeholder="name@example.com" name="email" #userEmail="ngModel"
+                required ngModel email>
               <label for="floatingInput1">Email address</label>
+
+              <span *ngIf="userEmail.invalid && userEmail.touched" style="color: red;">
+                Please enter valid email!
+            </span>
             </div>
 
             <div class="form-floating">
-              <input type="password" class="form-control" id="floatingInput2" placeholder="password" #userPwd required>
+              <input type="password" name="password" class="form-control" id="floatingInput2" placeholder="password" #userPwd="ngModel" minlength="5" required ngModel>
               <label for="floatingInput2">Password</label>
+
+              <span *ngIf="userPwd.invalid && userPwd.touched" style="color: red;">
+                Please enter valid password!
+            </span>
             </div>
 
             <div class="formGroup">
               <input type="button" class="btn btn-dark mt-5 w-100" value="Sign Up"
-                (click)="authService.SignUp(userEmail.value, userPwd.value)" />
+                (click)="authService.SignUp(userEmail.value, userPwd.value)" [disabled]="signupForm.invalid"/>
             </div>
 
             <div class="redirectToLogin mt-5">
               <span>Already have an account?
                 <a class="redirect" routerLink="/sign-in">Log In</a></span>
             </div>
+
+            </form>
           </div>
         </div>
       </div>

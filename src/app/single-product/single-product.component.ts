@@ -42,12 +42,12 @@ export class SingleProductComponent {
     this.headerComponent.testCall();
   }
 
-  // changeQuantity(cartItem:CartItem, quantityInString:string){
+  changeQuantity(cartItem:CartItem, quantityInString:string){
     
-  //   const quantity = parseInt(quantityInString);
-  //   this.cartService.changeQuantity(cartItem.product.id, quantity);
-  //   this.setCart();
-  // }
+    const quantity = parseInt(quantityInString);
+    this.cartService.changeQuantity(cartItem.product.id, quantity);
+    this.setCart();
+  }
 
   setCart() {
     this.cart = this.cartService.getCart();

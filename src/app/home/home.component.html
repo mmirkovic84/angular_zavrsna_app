@@ -50,7 +50,7 @@
     </div>
 </div>
 <div class="container">
-    
+
     <div class="row mb-2">
         <!-- <div class="col-lg-3 col-md-6 col-sm-12 pe-1 text-center" *ngFor="let img of imgs">
             <div [innerHtml]="img">
@@ -60,10 +60,11 @@
         </div>  -->
         <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-5" *ngFor="let product of products">
             <a routerLink="/product/{{product.id}}" class="prod-imgs">
-                 <img src="{{product.imageUrl}}" alt="" class="img-fluid mb-2">
-                 <p class='text-center fs-4 mt-1'>{{product.name}}</p><p class='text-center fs-4'>${{product.price}}</p>
-             </a>
-         </div>
+                <img src="{{product.imageUrl}}" alt="" class="img-fluid mb-2">
+                <p class='text-center fs-4 mt-1'>{{product.name}}</p>
+                <p class='text-center fs-4'>${{product.price}}</p>
+            </a>
+        </div>
     </div>
 
 
@@ -93,7 +94,7 @@
             <p>Payment Method/</p>
         </div>
         <div class="col-lg-8 mt-5">
-            <form id="contact-form" name="contact-form">
+            <form id="contact-form" name="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit(); contactForm.resetForm()">
 
                 <!--Grid row-->
                 <div class="row">
@@ -101,8 +102,14 @@
                     <!--Grid column-->
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Your Name" id="floatingTextarea1"></textarea>
+                            <input type="text" class="form-control" placeholder="Your Name" id="floatingTextarea1"
+                                required name="name" #name="ngModel" pattern="[a-zA-Z]+$" minlength="3" ngModel>
                             <label for="floatingTextarea1">Your Name</label>
+
+                            <span *ngIf="name.invalid && name.touched" style="color: red;">
+                                Please enter your Name!
+                            </span>
+
                         </div>
                     </div>
                     <!--Grid column-->
@@ -110,8 +117,13 @@
                     <!--Grid column-->
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Your email" id="floatingTextarea2"></textarea>
+                            <input type="email" class="form-control" placeholder="Your email" id="floatingTextarea2"
+                                required name="email" #email="ngModel" email ngModel >
                             <label for="floatingTextarea2">Your email</label>
+
+                            <span *ngIf="email.invalid && email.touched" style="color: red;">
+                                Please enter valid e-mail!
+                            </span>
                         </div>
                     </div>
                     <!--Grid column-->
@@ -123,8 +135,13 @@
                 <div class="row">
                     <div class="col-md-12 mt-3">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Subject" id="floatingTextarea3"></textarea>
+                            <input type="text" class="form-control" placeholder="Subject" id="floatingTextarea3"
+                                required name="subject" ngModel #subject="ngModel"  minlength="5">
                             <label for="floatingTextarea3">Subject</label>
+
+                            <span *ngIf="subject.invalid && subject.touched" style="color: red;">
+                                Please enter Subject!
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -137,8 +154,8 @@
                     <div class="col-md-12 mt-3">
 
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Your Message" id="floatingTextarea4"
-                                style="height: 100px"></textarea>
+                            <input type="text" class="form-control" placeholder="Your Message" id="floatingTextarea4"
+                                style="height: 100px" required name="message" ngModel>
                             <label for="floatingTextarea4">Your Message</label>
                         </div>
 
@@ -146,15 +163,15 @@
                 </div>
                 <!--Grid row-->
                 <div class="text-center text-md-left mt-4 mb-5">
-                    <a class="btn btn-outline-secondary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                    <button class="btn btn-outline-secondary" [disabled]="contactForm.invalid" >Send</button>
                 </div>
 
             </form>
-<div class="row">
-    <div class="col-12">
-        <p>Get our Newslatters</p>
-    </div>
-</div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Get our Newslatters</p>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6 col-sm-3">
                     <div class="form-floating">
@@ -164,8 +181,8 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-2 text-center" style="padding-top: 9px;">
-                    <a class="btn btn-dark"
-                        onclick="document.getElementById('contact-form').submit();">Subscribe Now</a>
+                    <a class="btn btn-dark" onclick="document.getElementById('contact-form').submit();">Subscribe
+                        Now</a>
                 </div>
             </div>
 

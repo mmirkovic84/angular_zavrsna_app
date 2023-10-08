@@ -35,6 +35,8 @@
        <!-- <label class="form-label" for="typeNumber">Quantity:&nbsp;</label>
                             <input type="number" placeholder="1" id="typeNumber" class="form-control-cart" #quantitySelect
                                 (change)="changeQuantity(cartItem,quantitySelect.value)" min="1" />  -->
+
+
 <!-- If user is logged in let him add to cart. -->
        <ng-template [ngIf]="authService.isLoggedIn">
         <button (click)="addToCart()" (click)="callMe()" class="btn btn-dark">Add to Cart</button>

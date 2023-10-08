@@ -28,6 +28,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -50,12 +54,14 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     ThankYouComponent,
+    TemplateDrivenFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
 AngularFireModule.initializeApp(environment.firebase),
 AngularFireAuthModule,
 AngularFireStorageModule,

@@ -13,15 +13,24 @@
             </div>
 
 
-            <form name="login-form" class="mt-4">
+            <form id="login-form" name="login-form" #loginForm="ngForm" class="mt-4" (ngSubmit)="onSubmit(); loginForm.resetForm()">
 
               <div class="form-floating mb-3 mt-5">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" #userName required >
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" #userName="ngModel" required email ngModel>
                 <label for="floatingInput">Email address</label>
+
+                <span *ngIf="userName.invalid && userName.touched" style="color: red;">
+                  Please enter valid email!
+              </span>
               </div>
+
               <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"  #userPassword required>
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" #userPassword="ngModel" minlength="5"  required ngModel>
                 <label for="floatingPassword">Password</label>
+
+                <span *ngIf="userPassword.invalid && userPassword.touched" style="color: red;">
+                  Please enter valid password!
+              </span>
               </div>
 
           </form>
@@ -32,7 +41,7 @@
             <!-- Calling SignIn Api from AuthService -->
             <div class="formGroup" id="login-button1">
               <input type="button" class="btn btn-dark mt-5 w-100" value="Log in"
-                (click)="authService.SignIn(userName.value, userPassword.value)" />
+                (click)="authService.SignIn(userName.value, userPassword.value)" [disabled]="loginForm.invalid"/>
             </div>
             
             <div class="forgotPassword mt-5">

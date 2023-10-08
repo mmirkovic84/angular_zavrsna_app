@@ -3,7 +3,7 @@
     <div class="row"  *ngIf="tags">
         
             <div class="col-md-3 text-center tagovi pt-5 pb-3" *ngFor="let tag of tags" >
-                <a routerLink="/tag/{{tag.name}}">
+                <a routerLink="/tag/{{tag.name}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
                     {{tag.name}} <br>
                     <img src="{{tag.imageUrl}}" alt="" class="img-fluid mb-2  tag-image">
                     </a>

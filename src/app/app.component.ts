@@ -1,5 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+
+
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,6 @@ import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 })
 export class AppComponent {
   title = 'ZavrsnaApp';
+
   
 }

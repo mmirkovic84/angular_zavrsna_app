@@ -25,10 +25,8 @@
                             <label class="form-label" for="typeNumber">Quantity:&nbsp;</label>
                             <input type="number" placeholder="1" id="typeNumber" class="form-control-cart" #quantitySelect
                                 (change)="changeQuantity(cartItem,quantitySelect.value)" min="1" />
-
                         </div>
                         
-
                         <div class="col-md-2  text-end">
                             {{cartItem.price | currency}}
                         </div>
